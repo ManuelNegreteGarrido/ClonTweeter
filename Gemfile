@@ -72,3 +72,5 @@ group :test do
 end
 gem 'will_paginate'
 gem 'ransack'
+gem 'faker'
+
