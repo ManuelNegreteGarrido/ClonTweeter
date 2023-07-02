@@ -30,3 +30,31 @@
  .card-text {
    margin: 0;
  }
+ .btn {
+  /* Estilos comunes para todos los botones */
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  /* Otros estilos personalizados */
+}
+
+.btn-primary {
+  /* Estilos específicos para el botón primario */
+  background-color: blue;
+  color: white;
+}
+.pagination {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.a {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+
+}

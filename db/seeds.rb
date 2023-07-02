@@ -8,7 +8,7 @@
 require 'faker'
 
 # Crea 20 tweets de ejemplo
-200.times do
+400.times do
   Tweet.create(
     description: Faker::Lorem.sentence,
     user_name: Faker::Internet.username

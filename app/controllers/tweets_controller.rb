@@ -1,27 +1,22 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: %i[ show edit update destroy ]
+  before_action :set_tweet, only: %i[show edit update destroy]
 
   def index
     @q = Tweet.ransack(params[:q])
     @tweets = @q.result(distinct: true).paginate(page: params[:page], per_page: 10)
-    @tweets = Tweet.paginate(page: params[:page], per_page: 10)
+    @button_style = "btn btn-primary" # Define el estilo del botón aquí
   end
-  
 
-  # GET /tweets/1 or /tweets/1.json
   def show
   end
 
-  # GET /tweets/new
   def new
     @tweet = Tweet.new
   end
 
-  # GET /tweets/1/edit
   def edit
   end
 
-  # POST /tweets or /tweets.json
   def create
     @tweet = Tweet.new(tweet_params)
 
@@ -36,7 +31,6 @@ class TweetsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /tweets/1 or /tweets/1.json
   def update
     respond_to do |format|
       if @tweet.update(tweet_params)
@@ -49,10 +43,8 @@ class TweetsController < ApplicationController
     end
   end
 
-  # DELETE /tweets/1 or /tweets/1.json
   def destroy
     @tweet.destroy
-
     respond_to do |format|
       format.html { redirect_to tweets_url, notice: "Tweet was successfully destroyed." }
       format.json { head :no_content }
@@ -60,13 +52,12 @@ class TweetsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_tweet
-      @tweet = Tweet.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def tweet_params
-      params.require(:tweet).permit(:description, :user_name)
-    end
+  def set_tweet
+    @tweet = Tweet.find(params[:id])
+  end
+
+  def tweet_params
+    params.require(:tweet).permit(:description, :user_name, :id)
+  end
 end
