@@ -70,7 +70,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-gem 'will_paginate'
+
 gem 'ransack'
 gem 'faker'
+gem 'will_paginate-bootstrap'
+
 

@@ -13,5 +13,20 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
+ .tweet {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   gap: 16px;
+ }
 
+ .card-body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+ }
+
+ .card-text {
+   margin: 0;
+ }
